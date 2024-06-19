@@ -1,5 +1,5 @@
 html {
-    font-size: 40px;
+    font-size: 25px;
 }
 * {
     box-sizing: border-box;
@@ -10,48 +10,73 @@ html {
     width:100%;
     padding: 10;
     background-color: rgb(245, 237, 222);
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
 }
 .container h1{
     font-size: 2rem;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 .score-container{
     display:flex;
     justify-content: space-between;
-    width: 70%;
+    width: 80%;
     margin: 2rem;
     align-self: center;
-    border:2px solid red;
+    /* border:2px solid red; */
 
 }
 .score{
     color: white;
     height: 5rem;
-    width: 2.5rem;
+    width: 3rem;
     box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.15);
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+}
+.score-button{
+    height: 5rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    /* border:none; */
+    background:none;
+    color:white;
+    font-size: 0.7rem;
+}
+.incomplete-score-button:hover{
+    background-color: rgb(124, 84, 46);;
+}
+.complete-score-button:hover{
+    background-color: rgb(122,122,122); 
+}
+.incomplete-score-button:active{
+    background-color: rgb(91, 64, 38);
+    /* color:antiquewhite; */
 }
 .wood-grain{
     background-image: url("./imgs/wood-grain.png");
 
+}
+.light-wood{
+    background-image: url("./imgs/light-wood.png");
+    
+}
+.light-wood button, .grey-wood button{
+    color: black
 }
 .grey-wood{
     background-image: url("./imgs/grey-wood.png");
 }
 .dice-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width:70%;
-    border:2px solid blue;
     margin: 2rem;
     align-self: center;
+    /* border:2px solid blue; */
 }
 .die{
     height: 2.5rem;
@@ -69,21 +94,42 @@ html {
     align-self: center;
 }
 .new-roll-button{
-    width:5rem;
-    height:2.5rem;
-    align-self: center;
-}
-.submit-button{
     width:7rem;
     height:3rem;
     align-self: center;
+}
+.submit-button, .new-roll-button{
+    width:7rem;
+    height:3rem;
+    align-self: center;
+    border-radius: 0.25rem;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(245, 237, 222);
+    color: black; 
+    border: 2px solid brown;
+}
+.submit-button:hover, .new-roll-button:hover{
+    background-color: brown;
+    color:white;
+}
+.submit-button:active, .new-roll-button:active{
+    background-color: black;
 }
 .match-scores{
     display: flex;
     justify-content: center;
     align-self: center;
     font-size: 2rem;
-    border:2px solid cyan;
+    /* border:2px solid cyan; */
 }
 .match-scores-num{
     /* margin:5rem; */
@@ -98,3 +144,97 @@ html {
     /* cursor: pointer; */
     margin: 0.5rem;
 }
+.sum-of-rolls{
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    /* border:2px solid red; */
+}
+.players-role{
+    display:flex;
+    align-items: center;
+}
+.score-submit{
+    display:flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    font-size: 0.5rem;
+    /* border:2px solid red; */
+}
+.score-submit p{
+    font-size: 1rem;
+    /* align-self: flex-end; */
+    margin-right: 1rem;
+}
+.match-container{
+    /* border:2px solid green; */
+    display: flex;
+    justify-content: space-around;
+    margin-top: -1rem;
+}
+
+.switch-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  .switch-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background: grey;
+    border-radius: 100px;
+    position: relative;
+    transition: background-color .2s;
+  }
+  
+  .switch-label .switch-button {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    transition: 0.2s;
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  }
+  
+  .switch-checkbox:checked + .switch-label .switch-button {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+  
+  .switch-label:active .switch-button {
+    width: 60px;
+  }
+  .switch-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border:2px solid cyan; */
+  }
+  .switch-span{
+    margin-right: 0.5rem;
+  }
+  .player-button-container{
+    display:flex;
+    justify-content: space-evenly;
+    margin:1rem;
+  }
+  .span-container{
+    display:flex;
+    justify-content: flex-end;
+    /* align-self: flex-end; */
+    
+
+  }
+  .switch-span{
+    font-size: 0.65rem;
+  }
+ 
