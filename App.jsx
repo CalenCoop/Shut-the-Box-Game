@@ -3,6 +3,7 @@ import Score from "./components/Score"
 import Die from "./components/Die"
 import ToggleSwitch from "./components/ToggleSwitch"
 import { nanoid } from "nanoid"
+import Confetti from "react-confetti"
 
 export default function App() {
   const [dice, setDice] = React.useState([])
@@ -13,11 +14,6 @@ export default function App() {
   const [lostGame, setLostGame] = React.useState(false)
   const [easyMode, setEasyMode] = React.useState(false)
 
-  
-  //fix Hover 
-  //do something when you win & change to restart game
-
-  
 
   React.useEffect(()=> {
     newRoll()
@@ -155,7 +151,7 @@ const scoreRemaining = sumOfRolls - matchTheScore.reduce((acc,c) => acc + c, 0)
   
     return (
         <div className="container">
-            {beatGame ? "GOOD JOB!!!": null}
+            {beatGame ? <Confetti /> : null}
             <h1> Shut the Box</h1>
             <ToggleSwitch
              easyMode={easyMode} 
@@ -164,37 +160,36 @@ const scoreRemaining = sumOfRolls - matchTheScore.reduce((acc,c) => acc + c, 0)
             <div className="score-container">
                 {scoreElements}
             </div>
-            <div className="match-container">
+            {beatGame ? 
+                <div className="congrats">
+                    <p>Congratultions! You Win!</p>
+                </div>
+                :
+                <div className="match-container">
+                    <div className="match-scores">
+                    {matchTheScore.map(num => <p key={num} className="match-scores-num"> {num}</p>)}
+                    </div>
             
-            
-                
-                <div className="match-scores">
-                {matchTheScore.map(num => <p key={num} className="match-scores-num"> {num}</p>)}
-        </div>
-            
-            <div className="score-submit">
-                {lostGame ? <p>Final Score: {finalScore()}</p> : <p>Remaining: {scoreRemaining}</p>}
-                {/* <button className="submit-button" 
-                onClick={submitMatchScore}> Submit </button> */}
+                    <div className="score-submit">
+                        {lostGame ? <p>Final Score: {finalScore()}</p> : <p>Remaining: {scoreRemaining}</p>}
+                    </div>
             </div>
-            </div>
+            }
             <div className="player-button-container">
                 {easyMode ? <button className="new-roll-button" onClick = {newRoll}> New Roll </button> : null}
                 <button className="submit-button" 
-                onClick={ lostGame || beatGame ? restartGame : submitMatchScore}> {lostGame ? 'Restart Game ' : 'Submit' }</button>
-                </div>
+                onClick={ lostGame || beatGame ? restartGame : submitMatchScore}> {lostGame || beatGame ? 'Restart Game ' : 'Submit' }</button>
+            </div>
             <div className="dice-container">
                 <div className="players-role">
                     <p>Your Roll:</p>
-                {diceElements}
+                    {diceElements}
                 </div>
                 <div className="sum-of-rolls">
-                    <p>Goal:</p>
-                <h4 className="die"> {sumOfRolls}</h4>
+                    <p>Total:</p>
+                    <h4 className="die"> {sumOfRolls}</h4>
                 </div>
-        
             </div>
-            
         </div>
   )
 }

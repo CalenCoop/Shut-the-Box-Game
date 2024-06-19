@@ -4,6 +4,7 @@ html {
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .container{
     height: 100vh;
@@ -15,21 +16,18 @@ html {
 }
 .container h1{
     font-size: 2rem;
-    /* font-family: 'Courier New', Courier, monospace; */
 }
 .score-container{
     display:flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin: 2rem;
     align-self: center;
-    /* border:2px solid red; */
-
 }
 .score{
     color: white;
-    height: 5rem;
-    width: 3rem;
+    height: 6rem;
+    width: 3.5rem;
     box-shadow: 0rem 0.1rem 0.1rem rgba(0, 0, 0, 0.15);
     border-radius: 0.5rem;
     display: flex;
@@ -38,10 +36,9 @@ html {
     cursor: pointer;
 }
 .score-button{
-    height: 5rem;
-    width: 3rem;
+    height: 6rem;
+    width: 3.6rem;
     border-radius: 0.5rem;
-    /* border:none; */
     background:none;
     color:white;
     font-size: 0.7rem;
@@ -54,7 +51,6 @@ html {
 }
 .incomplete-score-button:active{
     background-color: rgb(91, 64, 38);
-    /* color:antiquewhite; */
 }
 .wood-grain{
     background-image: url("./imgs/wood-grain.png");
@@ -76,7 +72,6 @@ html {
     width:70%;
     margin: 2rem;
     align-self: center;
-    /* border:2px solid blue; */
 }
 .die{
     height: 2.5rem;
@@ -100,7 +95,7 @@ html {
 }
 .submit-button, .new-roll-button{
     width:7rem;
-    height:3rem;
+    height:3.7rem;
     align-self: center;
     border-radius: 0.25rem;
     border: none;
@@ -129,10 +124,8 @@ html {
     justify-content: center;
     align-self: center;
     font-size: 2rem;
-    /* border:2px solid cyan; */
 }
 .match-scores-num{
-    /* margin:5rem; */
     height: 2.5rem;
     width: 2.5rem;
     background-color: white;
@@ -148,7 +141,6 @@ html {
     display: flex;
     align-items: center;
     align-self: flex-end;
-    /* border:2px solid red; */
 }
 .players-role{
     display:flex;
@@ -159,15 +151,12 @@ html {
     justify-content: flex-end;
     align-self: flex-start;
     font-size: 0.5rem;
-    /* border:2px solid red; */
 }
 .score-submit p{
     font-size: 1rem;
-    /* align-self: flex-end; */
     margin-right: 1rem;
 }
 .match-container{
-    /* border:2px solid green; */
     display: flex;
     justify-content: space-around;
     margin-top: -1rem;
@@ -217,7 +206,6 @@ html {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* border:2px solid cyan; */
   }
   .switch-span{
     margin-right: 0.5rem;
@@ -230,11 +218,17 @@ html {
   .span-container{
     display:flex;
     justify-content: flex-end;
-    /* align-self: flex-end; */
-    
-
   }
   .switch-span{
     font-size: 0.65rem;
+  }
+  .congrats{
+    display: flex;
+    justify-content: center;
+    margin-top:-1rem;
+    margin-bottom: 1rem;
+  }
+  .congrats p{
+    font-size: 3rem;
   }
  
