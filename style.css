@@ -1,16 +1,18 @@
 html {
     font-size: 25px;
+    background-color: rgb(245, 237, 222);
 }
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .container{
     height: 100vh;
     width:100%;
-    padding: 10;
-    background-color: rgb(245, 237, 222);
+    min-width: none;
+    min-height: auto;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -20,7 +22,7 @@ html {
 .score-container{
     display:flex;
     justify-content: space-between;
-    width: 90%;
+    width: auto;
     margin: 2rem;
     align-self: center;
 }
@@ -48,6 +50,9 @@ html {
 }
 .complete-score-button:hover{
     background-color: rgb(122,122,122); 
+}
+.used-score-button:hover{
+    background-color: rgb(204,167,106)
 }
 .incomplete-score-button:active{
     background-color: rgb(91, 64, 38);
@@ -146,6 +151,10 @@ html {
     display:flex;
     align-items: center;
 }
+.players-role p, .sum-of-rolls p{
+    font-size: 1rem;
+    font-weight: bold;
+}
 .score-submit{
     display:flex;
     justify-content: flex-end;
@@ -231,4 +240,84 @@ html {
   .congrats p{
     font-size: 3rem;
   }
- 
+  @media only screen and (min-width: 501px) and (max-width: 1150px) {
+
+    .score-container{
+        width: 100%;
+        display:grid;
+        grid-template: auto auto/ repeat(6,2fr);
+        gap:0.5rem;
+    }
+    .used-score-button:hover{
+        background-image: url("./imgs/light-wood.png");
+    }
+ }
+ @media only screen and (min-width: 0px) and (max-width: 500px) {
+   
+    .score-container{
+        width: 100%;
+        display:grid;
+        grid-template: auto auto/ repeat(4,0.5fr);
+        gap:0.5rem;
+        justify-items: center;
+        margin-top:0.8rem;
+    }
+    .score{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .score-button{
+        height: 2.5rem;
+        width: 2.5rem;
+        }
+        .dice-container{
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+            align-self: center;
+            font-size: 1rem;
+        }
+        .die {
+            height: 2rem;
+            width: 2rem;
+            margin: 0.2rem;
+        }
+        .submit-button, .new-roll-button{
+            width:3.5rem;
+            height:2rem;
+            font-size: 0.7rem;
+            padding:0;
+            margin: 0;
+        }
+        .match-scores-num{
+            height: 2rem;
+            width: 2rem;
+            font-size: 1rem;
+        }
+        .players-role, .sum-of-rolls{
+            font-size:0.8rem;
+        }
+        .switch-checkbox {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+          }
+          
+          .switch-label {
+            width:50px;
+            height: 20px;
+            border-radius: 50px;
+          }
+          
+          .switch-label .switch-button {
+            top:0px;
+            left: 1px;
+            width: 20px;
+            height: 20px;
+            border-radius: 45px;
+          }
+          .switch-label:active .switch-button {
+            width: 30px;
+          }
+
+ }

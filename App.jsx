@@ -5,6 +5,9 @@ import ToggleSwitch from "./components/ToggleSwitch"
 import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
 
+
+//make it mobile friendly
+
 export default function App() {
   const [dice, setDice] = React.useState([])
   const [totalScore, setTotalScore] = React.useState(startingScore())
@@ -162,7 +165,7 @@ const scoreRemaining = sumOfRolls - matchTheScore.reduce((acc,c) => acc + c, 0)
             </div>
             {beatGame ? 
                 <div className="congrats">
-                    <p>Congratultions! You Win!</p>
+                    <p>Congratulations! You Win!</p>
                 </div>
                 :
                 <div className="match-container">
@@ -182,12 +185,12 @@ const scoreRemaining = sumOfRolls - matchTheScore.reduce((acc,c) => acc + c, 0)
             </div>
             <div className="dice-container">
                 <div className="players-role">
-                    <p>Your Roll:</p>
+                    <span>Your Roll:</span>
                     {diceElements}
                 </div>
                 <div className="sum-of-rolls">
-                    <p>Total:</p>
-                    <h4 className="die"> {sumOfRolls}</h4>
+                    <span>Total:</span>
+                    <p className="die"> {sumOfRolls}</p>
                 </div>
             </div>
         </div>
