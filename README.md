@@ -1,11 +1,13 @@
 # Shut-the-Box-Game
+![Screen Recording 2024-09-10 at 2 14 02 PM](https://github.com/user-attachments/assets/2fb87d7f-4e76-49ee-b925-67e5b085c9df)
+
 
 ## Demo
 live demo of app - https://shut-the-box.netlify.app/
 
 ## Description
 
-    Shut the Box is a traditional dice game where players roll dice and cover numbers to match the roll. The goal is to cover all numbers from 1 to 12. This app brings the fun of Shut the Box to the web, providing an engaging user interface and easy gameplay.
+Shut the Box is a traditional dice game where players roll dice and cover numbers to match the roll. The goal is to cover all numbers from 1 to 12. This app brings the fun of Shut the Box to the web, providing an engaging user interface and easy gameplay.
 
 ## Features
     - Roll two dice and match the sum with numbers from 1 to 12.
