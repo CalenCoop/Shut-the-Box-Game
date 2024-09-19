@@ -1,5 +1,6 @@
 # Shut-the-Box-Game
-![Screen Recording 2024-09-10 at 2 14 02 PM](https://github.com/user-attachments/assets/2fb87d7f-4e76-49ee-b925-67e5b085c9df)
+<img src="https://github.com/user-attachments/assets/4c03f043-6f4a-4307-8a37-008dfc6979a5" alt="Shut-the-box-cl" width="500" height="300" />
+
 
 
 ## Demo
